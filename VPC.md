@@ -13,7 +13,11 @@ A default VPC including:
 
 ------
 
-IGW<br>
-RouteTables<br>
+ - IGW<br>
+ - RouteTables<br>
 You cannot delete RT if it has dependencies<br>
 ![](img/RTs.PNG)
+
+ - NACL Network Access Control List<br>
+ Rules are evaluated based on "rule #" from lowest to highest
+ ![](img/NACL.PNG)
