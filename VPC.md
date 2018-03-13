@@ -9,3 +9,4 @@ A default VPC including:
 - A route table
 - A network access control list
 - Subnets to provision AWS resource in (e.g. EC2 instance)
+![](img/VPC_Basic.PNG)
