@@ -19,5 +19,11 @@ You cannot delete RT if it has dependencies<br>
 ![](img/RTs.PNG)
 
  - NACL Network Access Control List<br>
- Rules are evaluated based on "rule #" from lowest to highest
+ (1) Rules are evaluated from lowest to highest based on "rule #"<br>
+ (2) The first rule found that applies to the traffic type is immediatly applied, regardless of any rules that come after it (have a higher "rule #").<br>
+ (3) The 'default' NACL allows all traffic to the default subnets.<br>
+ (4) Any new NACLs you create DENY all traffic by default.<br>
+ (5) A subnet can only be associated with ONE NACL as a lime.<br>
+ (6) An NACL allows or denies traffic from entering a subnet. Once inside the subnet, other AWS resources (i.e. EC2 instances) may have an additional layer of security (security groups).<br>
+
  ![](img/NACL.PNG)
