@@ -15,4 +15,5 @@ A default VPC including:
 
 IGW
 RouteTables
+
 ![](img/RTs.PNG)
