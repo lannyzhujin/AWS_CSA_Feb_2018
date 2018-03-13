@@ -13,7 +13,7 @@ A default VPC including:
 
 ------
 
-IGW
-RouteTables
-
+IGW<br>
+RouteTables<br>
+You cannot delete RT if it has dependencies<br>
 ![](img/RTs.PNG)
