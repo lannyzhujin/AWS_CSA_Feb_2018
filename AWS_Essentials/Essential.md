@@ -10,11 +10,14 @@ Support Documents
 AWS console -> Support -> Documentation
 
 ---
-IAM (Identity & Access Management)
-By default new user is with NO access to any AWS services
-MFA (multi-factor authentication)
+AWS Services
+IAM
+VPC
+S3
+ECS & DynamoDB
+SNS
+CloudWatch
+ELB
+Route53
+Lambda
 
- - Users
- - Groups
- - Policies
- - Roles
