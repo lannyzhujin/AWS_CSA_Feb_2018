@@ -6,7 +6,9 @@ I am glad if this can help you. Hope you can successfully go though the exam too
 
 Good Luck!
 
-[AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential)
+Start from [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential) if you are ZERO experience on AWS.
+
+Following topics are the key components of AWS concept of CSA exam.
 
 [CSA 00. overview](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/CSA-00.-overview)
 
@@ -43,3 +45,5 @@ Good Luck!
 [CSA 16. Container Services](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/CSA-16.-Container-Services)
 
 [CSA 17. CSA Concepts](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/CSA-17.-CSA-Concepts)
+
+All notes are generated based on [Linuxacademy](https://www.linuxacademy.com) video course. Please enroll if you like.
