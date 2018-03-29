@@ -1,14 +1,12 @@
-### AWS Certified Solution Architecture Exam prepare work space
+## AWS Certified Solution Architecture Exam prepare work space
 
-This workspace is my online note book when prepare CSA examinaiton.
+ > This workspace is my online note book when prepare CSA examinaiton. I am glad if this can help you. Hope you can successfully go though the exam too!
 
-I am glad if this can help you. Hope you can successfully go though the exam too!
+**Good Luck!**
 
-Good Luck!
+### Start from [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential) if you are ZERO experience on AWS.
 
-Start from [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential) if you are ZERO experience on AWS.
-
-Following topics are the key components of AWS concept of CSA exam.
+### Following topics are the key components of AWS concept of CSA exam. Please go though ALL of them before take exam.
 
 [CSA 00. overview](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/CSA-00.-overview)
 
