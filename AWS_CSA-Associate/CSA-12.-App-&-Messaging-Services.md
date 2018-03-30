@@ -52,8 +52,14 @@ Publisher -> Topic -> Subscription
 ### Other important SQS facts
  - Each message can contain up to 256KB of text (in any format).
  - Amazon SQS offer two different types of queues:
-     - **Standard Queue**: Guarantees delivery of each message at least once BUT DOES NOT guarantee the order (best effort) in which they are delivered to the queue.
-	 - **First-in-first-out (FIFO) Queue**: Designed for applications where the order of operations and events is critical, or where duplicates can't be tolerated.
+     - **Standard Queue**:
+     	- **Unlimited Throughput**: Standard queues support a nearly unlimited number of transactions per second (TPS) per API action.
+	- **At-Least-Once Delivery**: A message is delivered at least once, but occasionally more than one copy of a message is delivered.
+	- **Best-Effort Ordering:** Occasionally, messages might be delivered in an order different from which they were sent.
+     - **First-in-first-out (FIFO) Queue**: Designed for applications where the order of operations and events is critical, or where duplicates can't be tolerated.
+     	- **High Throughput:** FIFO queues support up to 300 messages per second (300 send, receive, or delete operations per second). When you batch 10 messages per operation (maximum), FIFO queues can support up to 3,000 messages per second. To request a limit increase, file a support request.
+	- **First-ln-First-out Delivery**: The order in which messages are sent and received is strictly preserved.
+	- **Exactly-Once Processing**: A message is delivered once and remains available until a consumer processes and deletes it. Duplicates are not introduced into the queue.
  - SQS is also highly available and redundant. 
  
 ### SQS Workflow
