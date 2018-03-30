@@ -49,18 +49,24 @@ Publisher -> Topic -> Subscription
 	 - Will not return all possible messages in a poll.
 	 - Increases API requests (over long polling), which increases costs. 
 
-### Other important SQS facts
- - Each message can contain up to 256KB of text (in any format).
- - Amazon SQS offer two different types of queues:
-     - **Standard Queue**:
-         - **Unlimited Throughput**: Standard queues support a nearly unlimited number of transactions per second (TPS) per API action.
-         - **At-Least-Once Delivery**: A message is delivered at least once, but occasionally more than one copy of a message is delivered.
-         - **Best-Effort Ordering:** Occasionally, messages might be delivered in an order different from which they were sent.
-     - **First-in-first-out (FIFO) Queue**: Designed for applications where the order of operations and events is critical, or where duplicates can't be tolerated.
-         - **High Throughput:** FIFO queues support up to 300 messages per second (300 send, receive, or delete operations per second). When you batch 10 messages per operation (maximum), FIFO queues can support up to 3,000 messages per second. To request a limit increase, file a support request.
-         - **First-ln-First-out Delivery**: The order in which messages are sent and received is strictly preserved.
-         - **Exactly-Once Processing**: A message is delivered once and remains available until a consumer processes and deletes it. Duplicates are not introduced into the queue.
- - SQS is also highly available and redundant. 
+### SQS types
+ - **Standard Queue**:
+     - **Unlimited Throughput**: Standard queues support a nearly unlimited number of transactions per second (TPS) per API action.
+     - **At-Least-Once Delivery**: A message is delivered at least once, but occasionally more than one copy of a message is delivered.
+     - **Best-Effort Ordering:** Occasionally, messages might be delivered in an order different from which they were sent.
+     - Send data between applications when the throughput is important, for example:
+         - Decouple live user requests from intensive background work: let users upload media while resizing or encoding it.
+         - Allocate tasks to multiple worker nodes: process a high number of credit card validation requests.
+         - Batch messages for future processing: schedule multiple entries to be added to a database.
+ - **First-in-first-out (FIFO) Queue**: 
+     - **High Throughput:** FIFO queues support up to 300 messages per second (300 send, receive, or delete operations per second). When you batch 10 messages per operation (maximum), FIFO queues can support up to 3,000 messages per second. To request a limit increase, file a support request.
+     - **First-ln-First-out Delivery**: The order in which messages are sent and received is strictly preserved.
+     - **Exactly-Once Processing**: A message is delivered once and remains available until a consumer processes and deletes it. Duplicates are not introduced into the queue.
+     - Send data between applications when the order of events is important, for example:
+         - Ensure that user-entered commands are executed in the right order.
+         - Display the correct product price by sending price modifications in the right order.
+         - Prevent a student from enrolling in a course before registering for an account.
+
  
 ### SQS Workflow
  - Generally a "worker" instance will "poll" a queue to retrieve waiting messages for processing.
@@ -69,9 +75,7 @@ Publisher -> Topic -> Subscription
 ### SQS Message:  
  - A set of instructions that will be relayed to the "worker" instances via the SNS Queue.
  - Can be up to 256KB of text (in any format).
- - Each message is guaranteed to be delivered at least once:
-     - Order is not guaranteed
-     - Duplicates can occur 
+
 ### SOS Oueue:  
  - An queue stores messages (for up to 14 days), that can be retrieved through "polling".
  - Queues allows components of your application to work independently of each other (decoupled environments). 
