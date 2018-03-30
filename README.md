@@ -4,7 +4,7 @@
 
 **Good Luck!**
 
-### Start from [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/AWS-Essential.md) if you are ZERO experience on AWS.
+### Start from [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/Essentials/AWS_Essentials/Home.md) if you are ZERO experience on AWS.
 
 ### Following topics are the key components of AWS concept of CSA exam. Please go though ALL of them before take exam.
 
