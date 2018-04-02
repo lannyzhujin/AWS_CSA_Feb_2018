@@ -213,11 +213,11 @@ Cross-Origin Resource Sharing (CORS):
 ## Storage Gateway:  
  - Connects local data center software appliances to cloud based storage such as Amazon S3. 
 
-**Gateway-Cached Volumes**
+**Gateway-Cached Volumes (Data on S3)**
  - Create storage volumes and mount them as iSCSI devices on the on-premise servers.
  - The gateway will store the data written to this volume in Amazon S3 and will cache frequently access data on-premise in the storage device. 
 
-**Gateway-Stored Volumes**
+**Gateway-Stored Volumes (Data on on-premise)**
  - Store all the data locally (on-premise) in storage volumes.
  - Gateway will periodically take snapshots of the data as incremental backups and stores them on Amazon S3. 
 
