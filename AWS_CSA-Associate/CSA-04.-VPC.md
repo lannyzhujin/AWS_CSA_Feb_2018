@@ -82,7 +82,7 @@ Best practice is to leave the default route table and create a new route table w
 
 NOTE: The "default" VPC already has a "main" route table. 
 
-#Subnets
+# Subnets
   
 "When you create a VPC, it spans all of the Availability Zones in the region. After creating a VPC, you can add one or more subnets in each Availability Zone. Each subnet must reside entirely within one Availability Zone and cannot span zones." -Amazon Web Services 
 
