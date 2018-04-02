@@ -102,6 +102,7 @@ xl | Memory Optimized | For databases, memcached, large deployments of enterpris
 
 ### EBS Types
 EC2 Elastic Block Store Volumes: 
+
 **General Purpose SSD:**
  - Use for dev/test environments and smaller DB instances
  - Performance of 3 IOPS/GiB of storage size (burstable with baseline performance)
