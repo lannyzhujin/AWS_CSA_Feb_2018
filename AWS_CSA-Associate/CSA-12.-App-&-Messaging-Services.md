@@ -41,10 +41,10 @@ Publisher -> Topic -> Subscription
  - Messages between servers are retrieved through **polling**. 
  
 ### Two types of polling
- - Long Polling (1-20 seconds):
+ - Long Polling (1-20 seconds wait time):
      - Allows the SQS service to wait until a message is available in a queue before sending a response, and will return all messages from all SQS services.
 	 - Long polling reduces API requests (over using short polling).
- - Short Polling:
+ - Short Polling (0 second wait time) :
      - SQS samples a subset of servers and returns messages from just those servers.
 	 - Will not return all possible messages in a poll.
 	 - Increases API requests (over long polling), which increases costs. 
