@@ -140,6 +140,10 @@ EC2 Elastic Block Store Volumes:
  - Frequent snapshots of your data increases data durability - so highly recommended.
  - When a snapshot is being taken against the EBS volume, it can degrade performance so snapshots should occur during non-production or non-peak load hours. 
 
+### Others
+ - Viewing the Instance Block Device Mapping for Instance Store Volumes:
+    When you view the block device mapping for your instance, you can see only the EBS volumes, not the instance store volumes. You can use instance metadata to query the complete block device mapping. The base URI for all requests for instance metadata is http://169.254.169.254/latest/.
+
 ## IP address
 
 ### Private IP Address:
