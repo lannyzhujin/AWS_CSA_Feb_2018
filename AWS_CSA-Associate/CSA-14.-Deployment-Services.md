@@ -51,6 +51,19 @@ Create Chef servers that include Chef Automate premium features, and use the Che
 ## OpsWorks for Puppet Enterprise
 Create Puppet servers that include Puppet Enterprise features. Inspect, deliver, update, monitor, and secure your infrastructure.
 
+aws has a host of connected resources that can be created, managed, backed up, terminated and restored. you can do that manually, via the console, api or cli tools. you can also leverage additional tools to automate much (or all) of that process. cloudformation, opsworks and elastic beanstalk are three of those such tools.
+
+essentially, they fill similar roles: perform actions on specific connected resources within an account or accounts. the high level difference is that their functions offer various levels of abstration above the AWS platform.
+
+ - Elastic Beanstalk is the high level offering. it is the simplest way to deploy an application on aws. if you're looking for a no-frills, automagic, as-fully-managed-as-you-can-get-in-aws experience, this is it.
+
+ - OpsWorks is the middle tier. operating as a full featured orchestration tool (thus the tight relationship with chef), opsworks combines straightforward deployment, configuration and management with the flexibility to handle complex implementations.
+
+ - Cloudformation is the nuts and bolts, low level utility. when you want granular control over everything in your environment, cfn is the choice. cfn can handle pretty much anything - from tiny footprint, one instance web server deployments to netflix - with a templatized, code driven approach. if you're doing serious work with aws, you're probably using cloudformation.
+
+it's worth noting that these services can be combined. a useful set up would be to use cfn to establish the networking topology of your aws presence and opsworks to handle specific application deployment processes within the created network space.
+
+you can find more discussion about deployment methods here: https://d0.awsstatic.com/whitepapers/overview-of-deployment-options-on-aws.pdf
 
 ## Q: How is AWS CloudFormation different from AWS Elastic Beanstalk?
 
