@@ -63,7 +63,9 @@ essentially, they fill similar roles: perform actions on specific connected reso
 
 it's worth noting that these services can be combined. a useful set up would be to use cfn to establish the networking topology of your aws presence and opsworks to handle specific application deployment processes within the created network space.
 
-you can find more discussion about deployment methods here: https://d0.awsstatic.com/whitepapers/overview-of-deployment-options-on-aws.pdf
+you can find more discussion about deployment methods here: https://d0.awsstatic.com/whitepapers/overview-of-deployment-options-on-aws.pdf 
+
+[[1]](https://acloud.guru/forums/aws-certified-solutions-architect-professional/discussion/-K8uBbNMc2Jcc-mHRYLp/cloudformation-v-opsworks-v-elastic-beanstalk-use-cases)
 
 ## Q: How is AWS CloudFormation different from AWS Elastic Beanstalk?
 
