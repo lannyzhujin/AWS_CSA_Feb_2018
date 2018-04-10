@@ -39,6 +39,19 @@ Benefits
      - Python
      - Ruby 
 
+# OpsWorks
+AWS OpsWorks is a configuration management service that helps you build and operate highly dynamic applications, and propagate changes instantly.
+
+## OpsWorks Stacks
+Define, group, provision, deploy, and operate your applications in AWS by using Chef in local mode.
+
+## OpsWorks for Chef Automate
+Create Chef servers that include Chef Automate premium features, and use the Chef DK or any Chef tooling to manage them.
+
+## OpsWorks for Puppet Enterprise
+Create Puppet servers that include Puppet Enterprise features. Inspect, deliver, update, monitor, and secure your infrastructure.
+
+
 ## Q: How is AWS CloudFormation different from AWS Elastic Beanstalk?
 
 These services are designed to complement each other. ***AWS Elastic Beanstalk*** provides an environment to easily deploy and run applications in the cloud. It is integrated with developer tools and provides a one-stop experience for you to manage the lifecycle of your applications. ***AWS CloudFormation*** is a convenient provisioning mechanism for a broad range of AWS resources. It supports the infrastructure needs of many different types of applications such as existing enterprise applications, legacy applications, applications built using a variety of AWS resources and container-based solutions (including those built using AWS Elastic Beanstalk).
