@@ -88,3 +88,38 @@ When to use STS
  - Roles for Cross-Account Access
  - Role for Amazon EC2 (and other AWS services)
 
+## Limitations
+### Default limits for IAM entities:
+
+Resource	| Default Limit 
+------ | ------
+Customer managed policies in an AWS account	| 1500
+Groups in an AWS account	| 300
+Roles in an AWS account	| 1000
+Users in an AWS account	 | 5000 (If you need to add a large number of users, consider using temporary security credentials.)
+Virtual MFA devices (assigned or unassigned) in an AWS account | 	Equal to the user quota for the account
+Instance profiles in an AWS account	| 1000
+Server certificates stored in an AWS account |	20
+
+### Limits for IAM entities:
+
+Resource	 | Limit
+------ | ------
+Access keys assigned to an IAM user	| 2
+Access keys assigned to the AWS account root user	| 2
+Aliases for an AWS account	| 1
+Groups an IAM user can be a member of	| 10
+IAM users in a group	| Equal to the user quota for the account
+Identity providers (IdPs) associated with an IAM SAML provider object	| 10
+Keys per SAML provider	| 10
+Login profiles for an IAM user	| 1
+Managed policies attached to an IAM group	| 10
+Managed policies attached to an IAM role	| 10
+Managed policies attached to an IAM user	| 10
+MFA devices in use by an IAM user	| 1
+MFA devices in use by the AWS account root user	| 1
+Roles in an instance profile	| 1
+SAML providers in an AWS account	| 100
+Signing certificates assigned to an IAM user| 	2
+SSH public keys assigned to an IAM user	| 5
+Versions of a managed policy that can be stored	| 5
