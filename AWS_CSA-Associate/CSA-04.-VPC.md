@@ -122,3 +122,10 @@ Security Groups:
      - Security groups support only allow rules. 
      - They are **stateful**: so return traffic requests are allowed regardless of rules.
      - All rules are evaluated before deciding to allow traffic. 
+
+### Default Security Group
+Your AWS account automatically has a default security group per VPC and per region for EC2-Classic. 
+
+ - Allows all inbound traffic from other instances associated with the default security group (the security group specifies itself as a source security group in its inbound rules)
+
+ - Allows all outbound traffic from the instance.
