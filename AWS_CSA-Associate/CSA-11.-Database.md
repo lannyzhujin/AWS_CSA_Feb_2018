@@ -6,7 +6,7 @@
      - Does not allow access to the underlying operating system (fully-managed).
      - You connect to the RDS database server in the same way you would connect to a traditional on-premise database instance (i.e MySQL command line).
      - RDS has the ability to provision/resize hardware on demand for scaling. 
-    - You can enable Multi-AZ deployments for backup and high available solutions.
+     - You can enable Multi-AZ deployments for backup and high available solutions.
      - Utilize Read Replicas (MySQL/PostgreSQL/Aurora) - to help offload hits on your primary database.
      - Relational databases are databases that organize stored data into tables.
      - The associated tables have defined relationships between them. 
@@ -25,6 +25,10 @@
      - Not required to managed operating system
      - Multi-AZ with a single click
      - Automatic recovery in event of a failover 
+ - Storage Types
+     - General Purpose (SSD) - Max 16TB, Baseline is 3 IOPS per GiB.  below 1 TiB volumes reserve a burst balance of 3000 IOPS.
+     - Provisioned IOPS - Max 16TB, You specify the amount of storage you want allocated, and then specify the amount of dedicated IOPS you want.
+     - Magnetic 
 
 ## RDS Multi-AZ Failover: 
  - Multi-AZ failover (Automatic AZ-Failover) synchronously replicates data to a backup (stand-by) database instance located in another availability zone (but in the same region). 
