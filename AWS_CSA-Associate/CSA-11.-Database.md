@@ -26,9 +26,9 @@
      - Multi-AZ with a single click
      - Automatic recovery in event of a failover 
  - Storage Types
-     - General Purpose (SSD) - Max 16TB, Baseline is 3 IOPS per GiB.  below 1 TiB volumes reserve a burst balance of 3000 IOPS.
+     - General Purpose (SSD) - gp2, Max 16TB, Baseline is 3 IOPS per GiB.  below 1 TiB volumes reserve a burst balance of 3000 IOPS.
      - Provisioned IOPS - Max 16TB, You specify the amount of storage you want allocated, and then specify the amount of dedicated IOPS you want.
-     - Magnetic 
+     - Magnetic - For backward compatibility, recommend to use gp2 or Provisioned IOPS.
 
 ## RDS Multi-AZ Failover: 
  - Multi-AZ failover (Automatic AZ-Failover) synchronously replicates data to a backup (stand-by) database instance located in another availability zone (but in the same region). 
