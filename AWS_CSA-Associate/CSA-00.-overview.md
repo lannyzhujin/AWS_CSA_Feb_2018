@@ -52,3 +52,9 @@ Building Fault-Tolerant Application on AWS|||Oct 2011
 Using AWS for Disaster Recovery|||Oct 2014
 AWS Security Best Practices|||Aug 2016
 
+# Tagging Your Resources
+ - Maximum number of tags per resource—50
+ - Maximum key length—127 Unicode characters in UTF-8
+ - Maximum value length—255 Unicode characters in UTF-8
+ - Tag keys and values are case-sensitive.
+ - Do not use the aws: prefix 
