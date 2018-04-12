@@ -60,6 +60,6 @@ AWS Security Best Practices|||Aug 2016
  - Do not use the aws: prefix 
 
 # Public Data Sets
-    AWS hosts a variety of public datasets that anyone can access for free.
+ > AWS hosts a variety of public datasets that anyone can access for free.
     
-    Previously, large datasets such as satellite imagery or genomic data have required hours or days to locate, download, customize, and analyze. When data is made publicly available on AWS, anyone can analyze any volume of data without needing to download or store it themselves. These datasets can be analyzed using AWS compute and data analytics products, including Amazon EC2, Amazon Athena, AWS Lambda and Amazon EMR.
+ > Previously, large datasets such as satellite imagery or genomic data have required hours or days to locate, download, customize, and analyze. When data is made publicly available on AWS, anyone can analyze any volume of data without needing to download or store it themselves. These datasets can be analyzed using AWS compute and data analytics products, including Amazon EC2, Amazon Athena, AWS Lambda and Amazon EMR.
