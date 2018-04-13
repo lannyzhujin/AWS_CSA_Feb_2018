@@ -49,7 +49,9 @@
  - AWS provides automated point-in-time backups against the RDS database instance.
  - Automated backups are deleted once the database instance is deleted and cannot be recovered (but you can take your own snapshots of backups before deleting).
  - Backups on database engines only work correctly when the database engine is "transactional", but do currently work for all supported database types.
- - MySQL requires InnoDB for reliable backups. 
+ - MySQL requires InnoDB Engine for reliable backups. 
+ - Retention Period
+     - Automated backup retention period: 0 - 35 days. 7 default if you create RDS on AWS console, 1 default on API and CLI, 0 is disabled.
  
 ## RDS Read Replicas:  
  - Read replicas are asynchronous copies of the primary database that are used for read only purposes (only allow "read connections").
