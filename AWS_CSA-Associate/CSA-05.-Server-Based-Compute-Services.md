@@ -75,6 +75,14 @@ d2 | Storage Optimized | For large-scale data warehouse or parallel file systems
 r3/r4 |Memory Optimized | For databases, memcached, large deployments of enterprise applications 
 xl | Memory Optimized | For databases, memcached, large deployments of enterprise applications
 
+# EC2 Storage
+
+Storage Options:
+ - Amazon Elastic Block Store
+ - Amazon EC2 Instance Store
+ - Amazon Elastic File System (Amazon EFS)
+ - Amazon Simple Storage Service (Amazon S3)
+
 ## EBS
 ### EC2 Elastic Block Store (EBS) Basics:  
 
@@ -100,51 +108,87 @@ xl | Memory Optimized | For databases, memcached, large deployments of enterpris
  - Initializing occurs the first time a storage block on the volume is read - and the performance impact can be impacted by up to 50%.
  - You can avoid this impact in production environments by manually reading all the blocks. 
 
-### EBS Types
+### EBS Volume Types
 EC2 Elastic Block Store Volumes: 
 
-**General Purpose SSD:**
+**General Purpose SSD (gp2):**
  - Use for dev/test environments and smaller DB instances
  - Performance of 3 IOPS/GiB of storage size (burstable with baseline performance)
  - Volume size of 1GiB to 16TiB
  - Considerations when using T2 instances with SSD root volumes (burstable vs. baseline performance) 
 
-**Provisioned IOPS SSD:**
+**Provisioned IOPS SSD (io1):**
  - Used for mission critical applications that require sustained IOPS performance
  - Large database workloads
  - Volume size of 4GiB to 16TiB
  - Performs at provisioned level and can provision up to 20,000 IOPS per volume 
 
-**Magnetic:**
+**Throughput Optimized HDD (st1):**
+ - 500 GiB - 16 TiB
+ - Low cost HDD volume designed for frequently accessed, throughput-intensive workloads
+
+**Cold HDD (sc1) :**
+ - 500 GiB - 16 TiB
+ - Lowest cost HDD volume designed for less frequently accessed workloads
+
+### Previous Generation 
+**EBS Magnetic:**
  - Low storage cost
  - Used for workloads where performance is not important or data is infrequently accessed
  - Volume size of Min 1GiB Max 1 TiB 
 
-### EC2 Instance Store Volumes: 
+### EBS Snapshots:  
+ - Snapshots are point-in-time backups of EBS volumes that are stored in S3. 
+
+ - Snapshot properties:
+    - Snapshots are incremental in nature.
+    - A snapshot only stores the changes since the most recent snapshot, thus reducing costs (by only having to pay for storage for the "incremental changes" between snapshots).
+    - However, if the "original" snapshot is deleted, all data is still available in all the other snapshots.
+    - Even though snapshot storage only charges you for the amount of incremental data in each snapshot all prior data is still there.
+    - Snapshots can be used to create fully restored EBS volumes 
+
+ - A few other important snapshot notes:
+    - Frequent snapshots of your data increases data durability - so highly recommended.
+    - When a snapshot is being taken against the EBS volume, it can degrade performance so snapshots should occur during non-production or non-peak load hours. 
+
+## EC2 Instance Store Volumes: 
  - Instance-store volumes are virtual devices whose underlying hardware is physically attached to the host computer that is running the instance. 
  - Instance store volumes are considered ephemeral data, meaning the data on the volumes only exists for the duration of the life of the instance.
  - Once the instance is "stopped" or "shutdown" the data is erased.
  - The instance can be rebooted and still maintain its ephemeral data. 
-
-## EBS Snapshots:  
- - Snapshots are point-in-time backups of EBS volumes that are stored in S3. 
-
-### Snapshot properties:
- - Snapshots are incremental in nature.
- - A snapshot only stores the changes since the most recent snapshot, thus reducing costs (by only having to pay for storage for the "incremental changes" between snapshots).
- - However, if the "original" snapshot is deleted, all data is still available in all the other snapshots.
- - Even though snapshot storage only charges you for the amount of incremental data in each snapshot all prior data is still there.
- - Snapshots can be used to create fully restored EBS volumes 
-
-### A few other important snapshot notes:
- - Frequent snapshots of your data increases data durability - so highly recommended.
- - When a snapshot is being taken against the EBS volume, it can degrade performance so snapshots should occur during non-production or non-peak load hours. 
-
-### Others
  - Viewing the Instance Block Device Mapping for Instance Store Volumes:
  
     When you view the block device mapping for your instance, you can see only the EBS volumes, not the instance store volumes. You can use instance metadata to query the complete block device mapping. The base URI for all requests for instance metadata is http://169.254.169.254/latest/.
+    
+## Elastic File System (EFS): 
+ - EFS is a storage option for EC2 that allows for a scalable storage option.
+ - EFS storage capacity is elastic.
+ - The storage capacity will increase and decrease as you add or remove files.
+ - Applications running on an EC2 instance using EFS will always have the storage they need, without having to provision and attach larger storage devices.
+ - EFS is fully-managed (no maintenance required)
+ - Supports the Network File System version 4.0 and 4.1 (NFSv4) protocols when mounting.
+ - Best performance when using an EC2 AMI with Linux kernel 4.0 or newer. 
 
+### Benefits of EFS:
+ - The EFS file system can be accessed by one (or more) EC2 instances at the same time.
+ - Shared file access across all your EC2 instances.
+ - Application that span multiple EC2 instances can access the same data.
+ - EFS file systems can be mounted to on-premises servers (when connected to your VPC via AWS Direct Connect).
+ - This allows you to migrate data from on-prem servers to EFS and/or use it as a backup solution.
+ - EFS can scale to petabytes in size, while maintaining low-latency and high levels of throughput.
+ - You pay only for the amount of storage you are using. 
+
+### Security:
+ - Control file system access through POSIX permissions.
+ - VPC for network access control, and IAM for API access control.
+ - Encrypt data at rest using AWS Key Management Service (KMS). 
+
+### When to use:
+ - Big Data and analytics
+ - Media processing workflows
+ - Web Serving & Content Management 
+
+# EC2 Network
 ## IP address
 
 ### Private IP Address:
@@ -184,6 +228,11 @@ EC2 Elastic Block Store Volumes:
  - When logged into an EC2 instance, you can view the instance user-data used during creation, or meta-data by executing one of the the following commands:
      - **curl http://169.254.169.254/latest/user-data (displays bootstrapping commands)**
      - **curl http://169.254.169.254/latest/meta-data (displays AMI, instance type, etc)**
+
+## ENI (Elastic Network Interfaces)
+ - Hot attach - running instance
+ - Warn attach - stopped instance
+ - Cold attach - lauching instance
 
 # AMI
 ## Amazon Machine Images (AMIs):  
@@ -245,39 +294,9 @@ EC2 Elastic Block Store Volumes:
  - Placement groups can be "connected".
  - Instances must have 10 gigabit network speeds in order to take advantage of placement groups (proper instance type). 
 
-# Elastic File System (EFS): 
- - EFS is a storage option for EC2 that allows for a scalable storage option.
- - EFS storage capacity is elastic.
- - The storage capacity will increase and decrease as you add or remove files.
- - Applications running on an EC2 instance using EFS will always have the storage they need, without having to provision and attach larger storage devices.
- - EFS is fully-managed (no maintenance required)
- - Supports the Network File System version 4.0 and 4.1 (NFSv4) protocols when mounting.
- - Best performance when using an EC2 AMI with Linux kernel 4.0 or newer. 
-
-## Benefits of EFS:
- - The EFS file system can be accessed by one (or more) EC2 instances at the same time.
- - Shared file access across all your EC2 instances.
- - Application that span multiple EC2 instances can access the same data.
- - EFS file systems can be mounted to on-premises servers (when connected to your VPC via AWS Direct Connect).
- - This allows you to migrate data from on-prem servers to EFS and/or use it as a backup solution.
- - EFS can scale to petabytes in size, while maintaining low-latency and high levels of throughput.
- - You pay only for the amount of storage you are using. 
-
-## Security:
- - Control file system access through POSIX permissions.
- - VPC for network access control, and IAM for API access control.
- - Encrypt data at rest using AWS Key Management Service (KMS). 
-
-## When to use:
- - Big Data and analytics
- - Media processing workflows
- - Web Serving & Content Management 
 
 # Others
  ### Shared responsibility model
  - AWS is responsible for DDOS protection, port scanning protection, and ingress network filtering. You are responsible for managing security groups, applying an SSL certificate to an ELB, and the installation of custom firewall software.
  
- ### Elastic Network Interfaces
- - Hot attach - running instance
- - Warn attach - stopped instance
- - Cold attach - lauching instance
+
