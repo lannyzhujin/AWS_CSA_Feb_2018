@@ -234,6 +234,17 @@ EC2 Elastic Block Store Volumes:
  - Warn attach - stopped instance
  - Cold attach - lauching instance
 
+## Enhanced Networking on Linux
+ > Enhanced networking uses single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types.
+
+### Enhanced Networking Types
+ - Intel 82599 Virtual Function (VF) interface
+     - Up to 10 Gbps
+     - C3, C4, D2, I2, M4 (excluding m4.16xlarge), and R3 instances
+ - Elastic Network Adapter (ENA)
+     - Up to 25 Gbps 
+     - C5, F1, G3, H1, I3, m4.16xlarge, M5, P2, P3, R4, and X1 instances 
+     
 # AMI
 ## Amazon Machine Images (AMIs):  
  - A preconfigured package (template) required to launch and EC2 instance; includes an:
