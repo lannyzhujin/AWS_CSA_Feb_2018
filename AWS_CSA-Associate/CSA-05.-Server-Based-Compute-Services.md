@@ -276,3 +276,8 @@ EC2 Elastic Block Store Volumes:
 # Others
  ### Shared responsibility model
  - AWS is responsible for DDOS protection, port scanning protection, and ingress network filtering. You are responsible for managing security groups, applying an SSL certificate to an ELB, and the installation of custom firewall software.
+ 
+ ### Elastic Network Interfaces
+ - Hot attach - running instance
+ - Warn attach - stopped instance
+ - Cold attach - lauching instance
