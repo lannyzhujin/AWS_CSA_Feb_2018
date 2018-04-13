@@ -208,27 +208,6 @@ EC2 Elastic Block Store Volumes:
  - You can mask the failure of an instance or software by rapidly remapping the address to another instance in your account (i.e. detaching the EIP from one instance and attaching it to another).
  - Attaching an EIP to an instance will replace it's default public IP address for as long as it is attached. 
 
-## Bootstrapping & User-Data/Meta-Data:  
-### Bootstrapping:
- - Refers to a self-starting process or set of commands without external input.
- - With EC2, we can bootstrap the instance (during the creation process) with custom commands (such as installing software packages, running updates, and configuring other various settings) 
-
-### User-Data:
- - A step/section during the EC2 instance creation process where you can include your own custom commands via a script (i.e. a bash script) 
- - Here is an example of a bash script that will automate the process of updating the yum package installer, install Apache Web Server, and start the Apache service. 
-
-``` 
- #!/bin/bash
- yum update -y
- yum install -y httpd
- service httpd start
-```
-
-### Viewing User-Data & Instance Meta-Data: 
- - When logged into an EC2 instance, you can view the instance user-data used during creation, or meta-data by executing one of the the following commands:
-     - **curl http://169.254.169.254/latest/user-data (displays bootstrapping commands)**
-     - **curl http://169.254.169.254/latest/meta-data (displays AMI, instance type, etc)**
-
 ## ENI (Elastic Network Interfaces)
  - Hot attach - running instance
  - Warn attach - stopped instance
@@ -283,7 +262,27 @@ EC2 Elastic Block Store Volumes:
 - PV AM Is (Paravirtual):
      - Guests can run on host hardware that does not have explicit support for virtualization, but they cannot take advantage of special hardware extensions such as enhanced networking or GPU processing.
      - Historically, PV guests had better performance than HVM guests in many cases, but because of enhancements in HVM virtualization and the availability of PV drivers for HVM AMIs, this is no longer true. 
+     
+## Bootstrapping & User-Data/Meta-Data:  
+### Bootstrapping:
+ - Refers to a self-starting process or set of commands without external input.
+ - With EC2, we can bootstrap the instance (during the creation process) with custom commands (such as installing software packages, running updates, and configuring other various settings) 
 
+### User-Data:
+ - A step/section during the EC2 instance creation process where you can include your own custom commands via a script (i.e. a bash script) 
+ - Here is an example of a bash script that will automate the process of updating the yum package installer, install Apache Web Server, and start the Apache service. 
+
+``` 
+ #!/bin/bash
+ yum update -y
+ yum install -y httpd
+ service httpd start
+```
+
+### Viewing User-Data & Instance Meta-Data: 
+ - When logged into an EC2 instance, you can view the instance user-data used during creation, or meta-data by executing one of the the following commands:
+     - **curl http://169.254.169.254/latest/user-data (displays bootstrapping commands)**
+     - **curl http://169.254.169.254/latest/meta-data (displays AMI, instance type, etc)**
 # EC2 Placement Groups:  
  - A placement group is a cluster of instances within the same availability zone.
  - Used for applications that require an extremely low latency network between them.
