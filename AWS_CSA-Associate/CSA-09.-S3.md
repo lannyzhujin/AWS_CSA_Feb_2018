@@ -220,4 +220,7 @@ Cross-Origin Resource Sharing (CORS):
 **Gateway-Stored Volumes (Data on on-premise)**
  - Store all the data locally (on-premise) in storage volumes.
  - Gateway will periodically take snapshots of the data as incremental backups and stores them on Amazon S3. 
-
+ 
+**Virtual Tape Library**
+ > The AWS Storage Gateway service can be configured to act as a Virtual Tape Library (VTL) that spans from your on-premises environment, where your production applications are, to the AWS cloud's highly scalable, redundant and durable storage services, Amazon S3 and Amazon Glacier.
+![](https://d1.awsstatic-china.com/Solutions/Simple%20Tape%20Gateway%20Overview%20Pic.6d8cf7fef83537b3000cccfe8af98891dd4ea676.png)
