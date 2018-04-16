@@ -90,3 +90,5 @@
  - Cloudtrail logs help when addressing security concerns, by allowing you to view what actions users on your AWS account have performed.
  - Since AWS is just one big API - CloudTrail can log ever single action taken in your account. 
 
+# TrustAdvisor
+![](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/img/TrustAdvisor.PNG)
