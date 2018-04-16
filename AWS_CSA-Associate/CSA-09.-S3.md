@@ -50,6 +50,8 @@
  - Or you can use your own encryption keys:
      - Considered client side encryption where you encrypt the data before upload 
  - SSL terminated endpoints for the API 
+ - Server-Side Encryption: Using SSE-KMS
+     - You can protect data at rest in Amazon S3 by using three different modes of server-side encryption: SSE-S3, SSE-C, or SSE-KMS.
 
 # S3 Folders:  
  - For simplicity, S3 supports the concept of "folders".
