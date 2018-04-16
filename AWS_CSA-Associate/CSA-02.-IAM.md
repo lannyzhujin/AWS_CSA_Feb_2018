@@ -123,3 +123,6 @@ SAML providers in an AWS account	| 100
 Signing certificates assigned to an IAM user| 	2
 SSH public keys assigned to an IAM user	| 5
 Versions of a managed policy that can be stored	| 5
+
+### Key Management Service
+ - AWS KMS currently supports only symmetric (private) key cryptography.
