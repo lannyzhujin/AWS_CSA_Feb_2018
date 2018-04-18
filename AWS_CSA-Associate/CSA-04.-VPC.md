@@ -106,8 +106,9 @@ Network Access Control List (ACLs) Essentials:
  - They are **stateless**: so return traffic must be allowed through an outbound rule. 
  - They process rules in number order when deciding whether to allow traffic.
  - Rules are evaluated in order, starting with the lowest rule number- for example:
-     - If traffic is denied at a lower rule number and allowed at a higher rule number, the allow rule will be ignored and the traffic will be denied.
-     - The last rule in every ACL is a "catch all" deny rule. • This means that unless a protocol/port is explicitly allowed, it will be denied. 
+     - Rule number. Rules are evaluated starting with the lowest numbered rule. As soon as a rule matches traffic, it's applied regardless of any higher-numbered rule that may contradict it.
+     - The last rule in every ACL is a "catch all" deny rule.
+     - This means that unless a protocol/port is explicitly allowed, it will be denied. 
  - A network access control list (NACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. 
  - Best practice to increment numbers by 10 so if you have to place in a rule in a certain order it does not create an issue 
 
