@@ -67,4 +67,4 @@ AWS Security Best Practices|||Aug 2016
 # Shared responsibility model
  - AWS is responsible for DDOS protection, port scanning protection, and ingress network filtering. You are responsible for managing security groups, applying an SSL certificate to an ELB, and the installation of custom firewall software.
 
-[Home](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)
+[[Home]](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)
