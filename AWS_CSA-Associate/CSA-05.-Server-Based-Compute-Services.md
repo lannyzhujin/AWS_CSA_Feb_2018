@@ -304,7 +304,4 @@ EC2 Elastic Block Store Volumes:
  - Placement groups can be "connected".
  - Instances must have 10 gigabit network speeds in order to take advantage of placement groups (proper instance type). 
 
-
-
- 
-
+[[Home]](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)

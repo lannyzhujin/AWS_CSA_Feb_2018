@@ -106,3 +106,5 @@ to 7 days.
 ### EMR Reduce Phase:  
  - Reducing is a function that aggregates the split data back into one data source.
  - Reduced data needs to be stored (in a service like S3) as data processed by the EMR cluster is not persistent. 
+
+[[Home]](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)

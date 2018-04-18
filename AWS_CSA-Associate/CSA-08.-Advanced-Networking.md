@@ -147,3 +147,5 @@
  - The "max" number of instances set in the auto scaling group may have been reached. 
 
 Please note: that there are more troubleshooting considerations that are outside the scope of the AWS CSA. However, they are covered in the AWS SysOps Certification and training course at the Linux Academy. 
+
+[[Home]](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)
