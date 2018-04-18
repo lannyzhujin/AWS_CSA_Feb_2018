@@ -305,8 +305,6 @@ EC2 Elastic Block Store Volumes:
  - Instances must have 10 gigabit network speeds in order to take advantage of placement groups (proper instance type). 
 
 
-# Others
- ### Shared responsibility model
- - AWS is responsible for DDOS protection, port scanning protection, and ingress network filtering. You are responsible for managing security groups, applying an SSL certificate to an ELB, and the installation of custom firewall software.
+
  
 
