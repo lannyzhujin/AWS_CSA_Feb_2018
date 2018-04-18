@@ -65,7 +65,7 @@
  - The resource owner can grant access to the resource (bucket/objects) through S3 "resource based policies" OR access can be granted through a traditional IAM user policy.
  - Resource based policies (for S3) are: 
       - **Bucket policies**
-          - A policies that are attached only to the S3 bucket (not an IAM user).
+          - All policies that are attached only to the S3 bucket (not an IAM user).
           - The permissions in the policy are applied to all objects in the bucket.
           - The policy specifies what actions are allowed or denied for a particular user of that bucket - such as:
               - Granting access to an anonymous User.
