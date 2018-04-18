@@ -4,7 +4,7 @@ Good Luck!
 
 [AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential)
 
-[CSA 00. overview](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/CSA-00.-overview)
+[CSA 00. overview](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/CSA-00.-overview.md)
 
 [CSA 01. AWS Organization](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/CSA-01.-AWS-Organization.md)
 
