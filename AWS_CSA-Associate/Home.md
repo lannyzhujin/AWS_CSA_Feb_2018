@@ -2,7 +2,7 @@ Welcome to the AWS_CSA_Feb_2018 exam preparation workspace.
 Hope you can successfully go though the exam. 
 Good Luck!
 
-[AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/wiki/AWS-Essential)
+[AWS-Essential](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/Essentials/AWS_Essentials/Home.md)
 
 [CSA 00. overview](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/CSA-00.-overview.md)
 
