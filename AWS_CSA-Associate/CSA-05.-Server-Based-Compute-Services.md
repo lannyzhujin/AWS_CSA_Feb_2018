@@ -179,7 +179,7 @@ EC2 Elastic Block Store Volumes:
  - You pay only for the amount of storage you are using. 
 
 ### Security:
- - Control file system access through POSIX permissions.
+ - Control file system access through [POSIX](https://en.wikipedia.org/wiki/POSIX) permissions.
  - VPC for network access control, and IAM for API access control.
  - Encrypt data at rest using AWS Key Management Service (KMS). 
 
