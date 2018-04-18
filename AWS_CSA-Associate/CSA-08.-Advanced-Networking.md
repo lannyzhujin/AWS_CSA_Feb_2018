@@ -9,6 +9,7 @@
      - This allows for highly availability and fault tolerant architecture.
  - Elastic load balancing should be paired with **Auto Scaling** to enhance high availability and fault tolerance, AND allow for automated scalability and elasticity.
  - An ELB has it's own DNS record set that allows for direct access from the open internet access. 
+ - Connection draining feature
  - [Comparision of ELB products](https://amazonaws-china.com/elasticloadbalancing/details/#compare)
 
 ### Classic ELB:  
