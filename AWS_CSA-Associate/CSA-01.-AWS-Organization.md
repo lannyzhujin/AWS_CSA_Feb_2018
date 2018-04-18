@@ -62,3 +62,4 @@ AWS Edge Location
 
  > A set of guidelines outlined by AWS that should be followed when provisioning and using their services. 
 
+[[Home]](https://github.com/lannyzhujin/AWS_CSA_Feb_2018/blob/master/AWS_CSA-Associate/Home.md)
