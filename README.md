@@ -1,6 +1,6 @@
 ## AWS Certified Solution Architecture Exam prepare work space
 
- > This workspace is my online note book when prepare CSA examinaiton. I am glad if this can help you. Hope you can successfully go though the exam too!
+ > This workspace is my online note book when prepare CSA examinaiton. I passed exam in April 2018. I am glad if this can help you. Hope you can successfully go though the exam too!
 
 **Good Luck!**
 
